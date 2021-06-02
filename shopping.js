@@ -52,3 +52,74 @@ const groceryList = [
 ];
 
 console.log(groceryList);
+
+const addToShoppingList = (listObj) => {
+  const lastIndex = groceryList.length - 1;
+  const currentLastGrocery = groceryList[lastIndex];
+  const maxId = currentLastGrocery.id;
+  const idForNewGrocery = maxId + 1;
+
+  listObj.id = idForNewGrocery;
+
+  groceryList.push(listObj);
+};
+
+const moreNewerGrocerys = {
+  name: "cream cheese",
+  price: 7.89,
+};
+const newGroceryCheese = {
+  name: "cheese",
+  price: 4.25,
+};
+const newGroceryChips = {
+  name: "chips",
+  price: 9,
+};
+const newGrocerySalsa = {
+  name: "salsa",
+  price: 12,
+};
+const newGroceryFrozenPizza = {
+  name: "frozen pizza",
+  price: 16,
+};
+
+addToShoppingList(moreNewerGrocerys);
+addToShoppingList(newGroceryCheese);
+addToShoppingList(newGroceryChips);
+addToShoppingList(newGrocerySalsa);
+addToShoppingList(newGroceryFrozenPizza);
+
+const createGroceryDate = (groceryCurrentDate) => {
+  const currentDate = new Date().toLocaleString();
+  // const dateTime =
+  //   currentDate.getMonth() +
+  //   1 +
+  //   "/" +
+  //   (currentDate.getDay() - 1) +
+  //   "/" +
+  //   currentDate.getFullYear() +
+  //   " " +
+  //   "@" +
+  //   " " +
+  //   currentDate.getHours() +
+  //   ":" +
+  //   currentDate.getMinutes() +
+  //   ":" +
+  //   currentDate.getSeconds();
+  // const dateForNewGrocery = dateTime;
+
+  groceryCurrentDate.dateOfEntry = currentDate;
+  groceryList.push(groceryCurrentDate);
+};
+createGroceryDate(moreNewerGrocerys);
+console.log(moreNewerGrocerys);
+createGroceryDate(newGroceryCheese);
+console.log(newGroceryCheese);
+createGroceryDate(newGroceryChips);
+console.log(newGroceryChips);
+createGroceryDate(newGrocerySalsa);
+console.log(newGrocerySalsa);
+createGroceryDate(newGroceryFrozenPizza);
+console.log(newGroceryFrozenPizza);
