@@ -51,7 +51,7 @@ const groceryList = [
   },
 ];
 
-console.log(groceryList);
+// console.log(groceryList);
 
 const addToShoppingList = (listObj) => {
   const lastIndex = groceryList.length - 1;
@@ -113,13 +113,23 @@ const createGroceryDate = (groceryCurrentDate) => {
   groceryCurrentDate.dateOfEntry = currentDate;
   groceryList.push(groceryCurrentDate);
 };
-createGroceryDate(moreNewerGrocerys);
-console.log(moreNewerGrocerys);
-createGroceryDate(newGroceryCheese);
-console.log(newGroceryCheese);
-createGroceryDate(newGroceryChips);
-console.log(newGroceryChips);
-createGroceryDate(newGrocerySalsa);
-console.log(newGrocerySalsa);
-createGroceryDate(newGroceryFrozenPizza);
-console.log(newGroceryFrozenPizza);
+// createGroceryDate(moreNewerGrocerys);
+// console.log(moreNewerGrocerys);
+// createGroceryDate(newGroceryCheese);
+// console.log(newGroceryCheese);
+// createGroceryDate(newGroceryChips);
+// console.log(newGroceryChips);
+// createGroceryDate(newGrocerySalsa);
+// console.log(newGrocerySalsa);
+// createGroceryDate(newGroceryFrozenPizza);
+// console.log(newGroceryFrozenPizza);
+
+for (const groceries of groceryList) {
+  if (groceries.price >= 8) {
+    console.log(
+      `${
+        groceries.name.charAt(0).toUpperCase() + groceries.name.slice(1)
+      } is too expensive to buy this week. Maybe next week.`
+    );
+  }
+}
